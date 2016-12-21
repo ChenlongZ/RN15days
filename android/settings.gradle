@@ -1,0 +1,3 @@
+rootProject.name = 'RN15days'
+
+include ':app'
