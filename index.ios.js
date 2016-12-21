@@ -21,6 +21,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import IconFA from 'react-native-vector-icons/FontAwesome';
 import Swiper from 'react-native-swiper';
 
+import Day1 from './view/day1.js';
+import Day2 from './view/day2.js';
+
 class mainView extends Component {
 	constructor(props) {
 		super(props);
@@ -38,7 +41,7 @@ class mainView extends Component {
 				key: 1, 
 				title: "A weather app",
 				component: Day2,
-				isFA:, false,
+				isFA: false,
 				icon: 'ios-partly-sunny', 
 				size: 60,
 				color: "#90bdc1",
@@ -82,10 +85,10 @@ class mainView extends Component {
 					);			
 		})
 		return (
-				<ScrollView style={styles.mainView} title={this.props.title}
+				<ScrollView style={styles.mainView} title={this.props.title}>
 					<Swiper height={150} 
 							showsButtons={false} 
-							autoPlay{true}
+							autoPlay={true}
 							activeDot={
 								<View style={{
 									backgroundColor: 'rgba(255, 255, 255, 0.8)',
@@ -97,16 +100,16 @@ class mainView extends Component {
 									marginTop: 3,
 									marginBottom: 3,}} />}>
 							<TouchableHighlight onPress={() => onThis._jumpToDay(0)}>
-								<View style={style.slide}>
+								<View style={styles.slide}>
 									<Image style={styles.image}
 										   source={{uri:'day1'}} />
 								    <Text style={styles.slideText}>Day1: Timer</Text>
 								</View>
 							</TouchableHighlight>
 							<TouchableHighlight onPress={() => onThis._jumpToDay(1)}>
-								<View style={style.slide}>
+								<View style={styles.slide}>
 									<Image style={styles.image}
-										   source={{uri:'day2}} />
+										   source={{uri:'day2'}} />
 								    <Text style={styles.slideText}>Day2 Weather</Text>
 								</View>
 							</TouchableHighlight>	
@@ -166,7 +169,7 @@ export default class RN15days extends Component {
 		},
 		Title: (route, navigator, index, navState) => {
 			return (
-					<Text style={style.navTitle}>{route.title}</Text>
+					<Text style={styles.navTitle}>{route.title}</Text>
 				   )
 		},
 	};
@@ -178,7 +181,7 @@ export default class RN15days extends Component {
 						title: '15 Days of RN',
 						index: 0,
 						display: true,
-						component: MainView,
+						component: mainView,
 					}}
 					configureScene={this.configureScene}
 					renderScene={(route, navigator) => {
