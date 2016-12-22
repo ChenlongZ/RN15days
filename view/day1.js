@@ -34,21 +34,55 @@ class WatchFace extends Component {
 class WatchControl extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			watchOn: false,
+			startBtnText: "Start",
+			startBtnColor: "#60B644",
+			stopBtnText: "Record",
+			underlayColor: "#fff",
+		};
 	}
-	_startWatch() {};
-	_recordWatch() {};
+	_startWatch() {
+		if (!this.state.watchOn) {
+			this.props.startWatch();
+			this.setState({
+				watchOn: true,
+				startBtnText: "Stop",
+				startBtnColor: "#ff0044",
+				stopBtnText: "Record",
+				underlayColor: "#eee",});
+		} else {
+			this.props.stopWatch();
+			this.setState({
+				watchOn: false,
+				startBtnText: "Start",
+				startBtnColor: "#60B644",
+				stopBtnText: "Reset",
+				underlayColor: "#eee",});
+		}
+	}
+
+	_recordWatch() {
+		if (this.state.watchOn) {
+			this.props.addRecord();
+		} else {
+			this.props.clearRecord();
+			this.setState({
+				stopBtnText: "Reset",
+			});
+		}
+	}
 	render() {
 		return (
 				<View style={styles.watchControlContainter}>
 					<View style={{flex:1,alignItems:"center"}}>
-						<TouchableHighlight style={styles.Button}>
-							<Text style={styles.ButtonText}>haha</Text>
+						<TouchableHighlight style={styles.Button} underlayColor={this.state.underlayColor} onPress={() => this._startWatch()}>
+							<Text style={[styles.ButtonText, {color: this.state.startBtnColor}]}>{this.state.startBtnText}</Text>
 						</TouchableHighlight>
 					</View>
 					<View style={{flex:1, alignItems: "center"}}>
-						<TouchableHighlight style={styles.Button}>
-							<Text style={styles.ButtonText}>hehe</Text>
+						<TouchableHighlight style={styles.Button} underlayColor="#eee" onPress={() => this._recordWatch()}>
+							<Text style={styles.ButtonText}>{this.state.stopBtnText}</Text>
 						</TouchableHighlight>
 					</View>
 				</View>
