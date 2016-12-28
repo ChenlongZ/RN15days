@@ -51,7 +51,7 @@ class mainView extends Component {
 	}
 
 	_jumpToDay(index) {
-		props.navigator.push({
+		this.props.navigator.push({
 			title: this.state.days[index].title,
 			index: index + 1,
 			display: !this.state.days[index].hideNav,
@@ -88,31 +88,28 @@ class mainView extends Component {
 				<ScrollView style={styles.mainView} title={this.props.title}>
 					<Swiper height={150} 
 							showsButtons={false} 
-							autoPlay={true}
-							activeDot={
-								<View style={{
-									backgroundColor: 'rgba(255, 255, 255, 0.8)',
-									width: 8,
-									height: 8, 
-									borderRadius: 4,
-									marginLeft: 3,
-									marginRight: 3,
-									marginTop: 3,
-									marginBottom: 3,}} />}>
+							autoPlay={true}>
 							<TouchableHighlight onPress={() => onThis._jumpToDay(0)}>
 								<View style={styles.slide}>
 									<Image style={styles.image}
-										   source={{uri:'day1'}} />
+										   source={require('./view/img/day1.png')} />
 								    <Text style={styles.slideText}>Day1: Timer</Text>
 								</View>
 							</TouchableHighlight>
 							<TouchableHighlight onPress={() => onThis._jumpToDay(1)}>
 								<View style={styles.slide}>
 									<Image style={styles.image}
-										   source={{uri:'day2'}} />
+										   source={require('./view/img/day2.png')} />
 								    <Text style={styles.slideText}>Day2 Weather</Text>
 								</View>
 							</TouchableHighlight>	
+							<TouchableHighlight onPress={() => onThis._jumpToDay(2)}>
+								<View style={styles.slide}>
+									<Image style={styles.image}
+										   source={require('./view/img/poincare.png')} />
+									<Text style={styles.slideText}>傻逼</Text>
+								</View>
+							</TouchableHighlight>
 					</Swiper>
 					<View style={styles.touchBoxContainer}>
 						{boxs}
@@ -273,10 +270,10 @@ const styles = StyleSheet.create({
 													      backgroundColor:"transparent"
 															    },
 							    slide: {
-									    flex: 1,
-										    height: 150,
+							    	height: 150,
+							    	flexDirection: "column",
 											    justifyContent: 'center',
-												    alignItems: 'center',
+											    alignItems: 'center',
 													  },
 								  slideText:{
 									      position:"absolute",
@@ -290,7 +287,7 @@ const styles = StyleSheet.create({
 																		    },
 								    image:{
 										    width: Util.size.width,
-											    flex: 1,
+										    flex: 1,
 												    alignSelf: 'stretch',
 													  }
 });
