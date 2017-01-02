@@ -3,17 +3,36 @@
  * Author: zic
  */
 
+const AppRegistry = require('AppRegistry');
+const Component = require('Component');
+const Day1 = require('Day1');
+const Day2 = require('Day2');
+const Icon = require('Icon.react');
+const IconFA = require('IconFA.react');
+const Image = require('Image.react');
+const Navigator = require('Navigator');
+const React = require('React');
+const ScrollView = require('ScrollView.react');
+const StatusBar = require('StatusBar');
+const StyleSheet = require('StyleSheet');
+const Swiper = require('Swiper.react');
+const Text = require('Text.react');
+const TouchableHighlight = require('TouchableHighlight.react');
+const TouchableOpacity = require('TouchableOpacity.react');
+const Util = require('Util');
+const View = require('View.react');
+
 import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
   View,
-  Image, 
+  Image,
   Navigator,
-  ScrollView, 
-  StatusBar, 
-  TouchableOpacity, 
+  ScrollView,
+  StatusBar,
+  TouchableOpacity,
   TouchableHighlight
 } from 'react-native';
 import Util from './view/utils';
@@ -38,11 +57,11 @@ class mainView extends Component {
 				color: "#ff856c",
 				hideNav: false,
 			}, {
-				key: 1, 
+				key: 1,
 				title: "A weather app",
 				component: Day2,
 				isFA: false,
-				icon: 'ios-partly-sunny', 
+				icon: 'ios-partly-sunny',
 				size: 60,
 				color: "#90bdc1",
 				hideNav: true,
@@ -67,7 +86,7 @@ class mainView extends Component {
 						key={elem.key}
 						style={[styles.touchBox, index%3==2?styles.touchBox2:styles.touchBox1]}
 						underlayColor="#eee"
-						onPress={() => 
+						onPress={() =>
 							onThis._jumpToDay(index)
 						}>
 						<View style={styles.boxContainer}>
@@ -82,12 +101,12 @@ class mainView extends Component {
 							}
 						</View>
 					</TouchableHighlight>
-					);			
+					);
 		})
 		return (
 				<ScrollView style={styles.mainView} title={this.props.title}>
-					<Swiper height={150} 
-							showsButtons={false} 
+					<Swiper height={150}
+							showsButtons={false}
 							autoPlay={true}>
 							<TouchableHighlight onPress={() => onThis._jumpToDay(0)}>
 								<View style={styles.slide}>
@@ -102,7 +121,7 @@ class mainView extends Component {
 										   source={require('./view/img/day2.png')} />
 								    <Text style={styles.slideText}>Day2 Weather</Text>
 								</View>
-							</TouchableHighlight>	
+							</TouchableHighlight>
 							<TouchableHighlight onPress={() => onThis._jumpToDay(2)}>
 								<View style={styles.slide}>
 									<Image style={styles.image}
@@ -183,112 +202,112 @@ export default class RN15days extends Component {
 					configureScene={this.configureScene}
 					renderScene={(route, navigator) => {
 						return <route.component
-									navigator={navigator}
-									title={route.title}
-									index={route.index} />
+              navigator={navigator}
+              title={route.title}
+              index={route.index} />
 					}}
 					navigationBar={
 						<NavigationBar
 							routeMapper={this.routeMapper}
 							style={styles.navBar}
-						/>
+      />
 					}
-				/>
+    />
 			   );
 	}
 }
 
 const styles = StyleSheet.create({
-	  container:{
-		      flex:1,
-			    },
-	    mainView: {
-			    marginTop: 63
-					  },
-		  navBar: {
-			      borderBottomWidth: 1,
-				      borderBottomColor: "#ddd",
-					    },
-		    navTitle: {
-				    paddingTop: 10,
-					    fontSize: 18,
-						    fontWeight: "500",
-							  },
-			  navBackBtn: {
-				      paddingTop: 10,
-					      paddingLeft: 10,
-						      fontSize: 18,
-							      color: "#555",
-								    },
-			    itemWrapper:{
-					    backgroundColor: '#f3f3f3'
-							  },
-				  touchBox:{
-					      width: Util.size.width/3-0.33334,
-						      height:Util.size.width/3,
-							      backgroundColor:"#fff",
-								    },
-				    touchBoxContainer:{
-						    flexDirection: "row", 
-							    flexWrap:"wrap",
-								    width: Util.size.width,
-									    borderTopWidth: Util.pixel,
-										    borderTopColor:"#ccc",
-											    borderLeftWidth: Util.pixel,
-												    borderLeftColor:"#ccc",
-													    borderRightWidth: Util.pixel,
-														    borderRightColor:"#ccc",
-															  },
-					  touchBox1:{
-						      borderBottomWidth: Util.pixel,
-							      borderBottomColor:"#ccc",
-								      borderRightWidth: Util.pixel,
-									      borderRightColor:"#ccc",
-										    },
-					    touchBox2:{
-							    borderBottomWidth: Util.pixel,
-								    borderBottomColor:"#ccc",
-									    borderLeftWidth: Util.pixel,
-										    borderLeftColor:"#ccc",
-											  },
-						  boxContainer:{
-							      alignItems:"center",
-								      justifyContent:"center",
-									      width: Util.size.width/3,
-										      height:Util.size.width/3,
-											    },
-						    boxIcon:{
-								    position:"relative",
-									    top:-10
-											  },
-							  boxText:{
-								      position:"absolute",
-									      bottom:15,
-										      width:Util.size.width/3,
-											      textAlign:"center",
-												      left: 0,
-													      backgroundColor:"transparent"
-															    },
-							    slide: {
-							    	height: 150,
-							    	flexDirection: "column",
-											    justifyContent: 'center',
-											    alignItems: 'center',
-													  },
-								  slideText:{
-									      position:"absolute",
-										      bottom: 0,
-											      paddingTop:5,
-												      paddingBottom:5,
-													      backgroundColor:"rgba(255,255,255,0.5)",
-														      width: Util.size.width,
-															      textAlign:"center",
-																      fontSize: 12
-																		    },
-								    image:{
-										    width: Util.size.width,
-										    flex: 1,
-												    alignSelf: 'stretch',
-													  }
+  container: {
+    flex: 1
+  },
+  mainView: {
+    marginTop: 63
+  },
+  navBar: {
+    borderBottomWidth: 1,
+    borderBottomColor: "#ddd",
+  },
+  navTitle: {
+    paddingTop: 10,
+    fontSize: 18,
+    fontWeight: "500",
+  },
+  navBackBtn: {
+    paddingTop: 10,
+    paddingLeft: 10,
+    fontSize: 18,
+    color: "#555",
+  },
+  itemWrapper:{
+	  backgroundColor: '#f3f3f3'
+  },
+	touchBox:{
+	  width: Util.size.width/3-0.33334,
+	  height:Util.size.width/3,
+		backgroundColor:"#fff",
+  },
+	touchBoxContainer:{
+	  flexDirection: "row",
+	  flexWrap:"wrap",
+		width: Util.size.width,
+		borderTopWidth: Util.pixel,
+		borderTopColor:"#ccc",
+		borderLeftWidth: Util.pixel,
+		borderLeftColor:"#ccc",
+		borderRightWidth: Util.pixel,
+		borderRightColor:"#ccc",
+  },
+	touchBox1:{
+		borderBottomWidth: Util.pixel,
+		borderBottomColor:"#ccc",
+		borderRightWidth: Util.pixel,
+		borderRightColor:"#ccc",
+  },
+	touchBox2:{
+	  borderBottomWidth: Util.pixel,
+	  borderBottomColor:"#ccc",
+	  borderLeftWidth: Util.pixel,
+	  borderLeftColor:"#ccc",
+  },
+	boxContainer:{
+	  alignItems:"center",
+	  justifyContent:"center",
+		width: Util.size.width/3,
+		height:Util.size.width/3,
+  },
+	boxIcon:{
+    position:"relative",
+		top:-10
+	},
+	boxText:{
+	  position:"absolute",
+	  bottom:15,
+	  width:Util.size.width/3,
+	  textAlign:"center",
+	  left: 0,
+	  backgroundColor:"transparent"
+	},
+	slide: {
+		height: 150,
+	  flexDirection: "column",
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+	slideText:{
+	  position:"absolute",
+	  bottom: 0,
+		paddingTop:5,
+		paddingBottom:5,
+		backgroundColor:"rgba(255,255,255,0.5)",
+		width: Util.size.width,
+		textAlign:"center",
+		fontSize: 12
+  },
+	image:{
+	  width: Util.size.width,
+	  flex: 1,
+	  alignSelf: 'stretch',
+	}
 });
 AppRegistry.registerComponent('RN15days', () => RN15days);

@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "bundle-android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --sourcemap-output android/app/src/main/assets/index.android.map --assets-dest android/app/src/main/res/",
+    "test": "jest",
+    "flow": "flow; test $? -eq 0 -o $? -eq 2",
   },
   "dependencies": {
     "react": "15.4.1",
@@ -15,6 +17,7 @@
   "devDependencies": {
     "babel-jest": "18.0.0",
     "babel-preset-react-native": "1.9.1",
+    "flow-bin": "^0.37.4",
     "jest": "18.0.0",
     "react-test-renderer": "15.4.1"
   },
@@ -22,6 +25,9 @@
     "preset": "react-native"
   },
   "rnpm": {
-	  "assets": ["./node_modules/react-native-vector-icons/Ionicons.js", "./node_modules/react-native-vector-icons/FontAwesome.js"]
+    "assets": [
+      "./node_modules/react-native-vector-icons/Ionicons.js",
+      "./node_modules/react-native-vector-icons/FontAwesome.js"
+    ]
   }
 }
