@@ -20,28 +20,28 @@ const backgroundColor = {
 }
 
 const weatherIcon = {
-	'chanceflurries' : './weatherIcon/Winter.png',
-	'chancerain' : './weatherIcon/LightRain.png',
-	'chancesleet' : './weatherIcon/Winter.png',
-	'chancesnow' : './weatherIcon/Light-Snow.png',
-	'chancetstorms' : './weatherIcon/Intense-Rain.png',
-	'clear' : './weatherIcon/Sun.png',
-	'cloudy' : './weatherIcon/Clouds.png',
-	'flurries' : './weatherIcon/Winter.png',
-	'fog' : './weatherIcon/Fog-Day.png',
-	'hazy' : './weatherIcon/Fog-Day.png',
-	'mostlycloudy' : './weatherIcon/Partly-Cloudy-Day.png',
-	'mostlysunny' : './weatherIcon/Partly-Cloudy-Day.png',
-	'partlycloudy' : './weatherIcon/Partly-Cloudy-Day.png',
-	'partlysunny' : './weatherIcon/Partly-Cloudy-Day.png',
-	'sleet' : './weatherIcon/Winter.png',
-	'rain' : './weatherIcon/Rain.png',
-	'snow' : './weatherIcon/Winter.png',
-	'sunny' : './weatherIcon/Sun.png',
-	'tstorms' : './weatherIcon/Torrential-Rain.png',
-	'fognight' : './weatherIcon/Fog-Night.png',
-	'partlycloudynight' : './weatherIcon/Partly-Cloudy-Night.png',
-	'clearnight' : './weatherIcon/Bright-Moon.png',
+	'chanceflurries' : './img/winter.png',
+	'chancerain' : './img/light-rain.png',
+	'chancesleet' : './img/winter.png',
+	'chancesnow' : './img/light-snow.png',
+	'chancetstorms' : './img/intense-rain.png',
+	'clear' : './img/dun.png',
+	'cloudy' : './img/clouds.png',
+	'flurries' : './img/winter.png',
+	'fog' : './img/fog-day.png',
+	'hazy' : './img/fog-day.png',
+	'mostlycloudy' : './img/partly-cloudy-day.png',
+	'mostlysunny' : './img/partly-cloudy-day.png',
+	'partlycloudy' : './img/partly-cloudy-day.png',
+	'partlysunny' : './img/partly-cloudy-day.png',
+	'sleet' : './img/winter.png',
+	'rain' : './img/rain.png',
+	'snow' : './img/winter.png',
+	'sunny' : './img/sun.png',
+	'tstorms' : './img/torrential-rain.png',
+	'fognight' : './img/fog-night.png',
+	'partlycloudynight' : './img/partly-cloudy-night.png',
+	'clearnight' : './img/bright-moon.png',
 };
 
 const BASE_URL = "https://api.wunderground.com/api/36708b1b79e70e0c/";
@@ -56,25 +56,25 @@ class Weather extends Component {
 				bgc: backgroundColor.day,
 				condition:"\u5927\u90e8\u6674\u6717",
 				degree: "--",
-				hours:[{key:101,hour:"\u73b0\u5728",icon:"./weatherIcon/default.png",degree:"15\xb0",},
-							 {key:102,hour:"3\u65f6",icon:"./weatherIcon/default.png",degree:"15\xb0",},
-							 {key:103,hour:"4\u65f6",icon:"./weatherIcon/default.png",degree:"16\xb0",},
-							 {key:104,hour:"5\u65f6",icon:"./weatherIcon/default.png",degree:"16\xb0",},
-							 {key:105,hour:"6\u65f6",icon:"./weatherIcon/default.png",degree:"16\xb0",},
-							 {key:106,hour:"06:21",icon:"./weatherIcon/default.png",degree:"\u65e5\u51fa",},
-							 {key:107,hour:"7\u65f6",icon:"./weatherIcon/default.png",degree:"16\xb0",},
-							 {key:108,hour:"8\u65f6",icon:"./weatherIcon/default.png",degree:"18\xb0",},
-							 {key:109,hour:"9\u65f6",icon:"./weatherIcon/default.png",degree:"19\xb0",color:"#fedf32"},
-							 {key:110,hour:"10\u65f6",icon:"./weatherIcon/default.png",degree:"122\xb0",color:"#fedf32"}],
-				days:[{key:21,day:"\u661f\u671f\u4e00",icon:"./weatherIcon/default.png",high:21,low:16},
-							  {key:22,day:"\u661f\u671f\u4e8c",icon:"./weatherIcon/default.png",high:22,low:14},
-								{key:23,day:"\u661f\u671f\u4e09",icon:"./weatherIcon/default.png",high:21,low:11},
-								{key:24,day:"\u661f\u671f\u56db",icon:"./weatherIcon/default.png",high:12,low:8},
-								{key:25,day:"\u661f\u671f\u4e94",icon:"./weatherIcon/default.png",high:9,low:7},
-								{key:26,day:"\u661f\u671f\u516d",icon:"./weatherIcon/default.png",high:13,low:9},
-								{key:27,day:"\u661f\u671f\u65e5",icon:"./weatherIcon/default.png",high:17,low:13},
-								{key:28,day:"\u661f\u671f\u4e00",icon:"./weatherIcon/default.png",high:18,low:14},
-								{key:29,day:"\u661f\u671f\u4e8c",icon:"./weatherIcon/default.png",high:22,low:17}],
+				hours:[{key:101,hour:"\u73b0\u5728",icon:"./img/default.png",degree:"15\xb0",},
+							 {key:102,hour:"3\u65f6",icon:"./img/default.png",degree:"15\xb0",},
+							 {key:103,hour:"4\u65f6",icon:"./img/default.png",degree:"16\xb0",},
+							 {key:104,hour:"5\u65f6",icon:"./img/default.png",degree:"16\xb0",},
+							 {key:105,hour:"6\u65f6",icon:"./img/default.png",degree:"16\xb0",},
+							 {key:106,hour:"06:21",icon:"./img/default.png",degree:"\u65e5\u51fa",},
+							 {key:107,hour:"7\u65f6",icon:"./img/default.png",degree:"16\xb0",},
+							 {key:108,hour:"8\u65f6",icon:"./img/default.png",degree:"18\xb0",},
+							 {key:109,hour:"9\u65f6",icon:"./img/default.png",degree:"19\xb0",color:"#fedf32"},
+							 {key:110,hour:"10\u65f6",icon:"./img/default.png",degree:"122\xb0",color:"#fedf32"}],
+				days:[{key:21,day:"\u661f\u671f\u4e00",icon:"./img/default.png",high:21,low:16},
+							  {key:22,day:"\u661f\u671f\u4e8c",icon:"./img/default.png",high:22,low:14},
+								{key:23,day:"\u661f\u671f\u4e09",icon:"./img/default.png",high:21,low:11},
+								{key:24,day:"\u661f\u671f\u56db",icon:"./img/default.png",high:12,low:8},
+								{key:25,day:"\u661f\u671f\u4e94",icon:"./img/default.png",high:9,low:7},
+								{key:26,day:"\u661f\u671f\u516d",icon:"./img/default.png",high:13,low:9},
+								{key:27,day:"\u661f\u671f\u65e5",icon:"./img/default.png",high:17,low:13},
+								{key:28,day:"\u661f\u671f\u4e00",icon:"./img/default.png",high:18,low:14},
+								{key:29,day:"\u661f\u671f\u4e8c",icon:"./img/default.png",high:22,low:17}],
 				rise:"06:21",
 				down:"18:06",
 				humi:"94%",
@@ -144,13 +144,14 @@ class Weather extends Component {
 			.then((response) => response.json())
 			.then((responseJson) => {
 				let sunsetHour = responseJson.sun_phase.sunset.hour;
+				let sunriseHour = responseJson.sun_phase.sunrise.hour;
 				let currentHour = new Date().getHours();
-				if (currentHour > sunsetHour) {
+				if (currentHour > sunsetHour || currentHour < sunriseHour) {
 					this.setState({night: true});
 				}
 				this.setState({
-					rise: JSON.stringify(responseJson.sun_phase.sunrise.hour) + ":" + JSON.stringify(responseJson.sun_phase.sunrise.minute),
-					down: JSON.stringify(responseJson.sun_phase.sunset.hour) + ":" + JSON.stringify(responseJson.sun_phase.sunset.minute),
+					rise: JSON.stringify(sunriseHour) + ":" + JSON.stringify(responseJson.sun_phase.sunrise.minute),
+					down: JSON.stringify(sunsetHour) + ":" + JSON.stringify(responseJson.sun_phase.sunset.minute),
 				})
 			})
 			.catch((error) => console.error(error));
@@ -200,8 +201,8 @@ class Weather extends Component {
 			hourlyRaw.forEach((item, index, array) => {
 				temp = {};
 				temp.key = item.index;
-				temp.hour = item.FCTTIME.hour;
-				temp.degree = item.temp.metric;
+				temp.hour = item.FCTTIME.hour >= 12 ? (item.FCTTIME.hour == 12 ? "12 PM" : item.FCTTIME % 12 + " PM") : item.FCTTIME.hour + " AM";
+				temp.degree = item.temp.metric + "°";
 				temp.icon = this._findConditionIcon(item.icon, this.state.night);
 				hourlyForecast.push(temp);
 			});
@@ -255,10 +256,13 @@ class Weather extends Component {
 
 	render() {
 		var hourly = this.state.hours.map(elem => {
+			let icon = require(elem.icon);
 			return (
 				<View key={elem.key} style={styles.hourlyBox}>
 					<Text style={styles.hourlyHour}>{elem.hour}</Text>
-					<Image style={styles.hourlyIcon} source={require('./weatherIcon/default.png')}/>
+					<View style={{width: 60, height: 40, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+						<Image style={styles.hourlyIcon} source={icon}/>
+					</View>
 					<Text style={styles.hourlyDegree}>{elem.degree}</Text>
 				</View>
 			);
@@ -349,7 +353,7 @@ styles = StyleSheet.create({
 		alignItems: "center",
 		paddingTop: 50,
 		width: Util.size.width,
-		height: Util.size.height/2.6,
+		height: Util.size.height/2.5,
 	},
 	city: {
 		fontSize: 35,
@@ -372,38 +376,36 @@ styles = StyleSheet.create({
 	},
 	hourly: {
 		width: Util.size.width,
-		height: 120,
-	},
-	hourlyContainer: {
-		marginTop: 3,
-		flexDirection: "row",
-		flexWrap: "nowrap",
-		paddingLeft: 20, paddingTop: 10, paddingBottom: 10, paddingRight: 20,
+		height: 90,
 		borderTopWidth: Util.pixel,
 		borderTopColor: "rgba(255,255,255,0.7)",
 		borderBottomWidth: Util.pixel,
 		borderBottomColor: "rgba(255,255,255,0.7)",
 	},
+	hourlyContainer: {
+		flexDirection: "row",
+		flexWrap: "nowrap",
+		paddingLeft: 5, paddingTop: 5, paddingBottom: 5, paddingRight: 5,
+	},
 	hourlyBox: {
-		width: 70,
+		width: 60,
 		height: 80,
 		flexDirection: "column",
-		paddingLeft: 7, paddingTop: 10, paddingBottom: 10, paddingRight: 7,
+		justifyContent: 'space-between',
+		alignItems: 'center',
 	},
 	hourlyHour: {
-		fontSize: 12,
+		fontSize: 13,
 		color: "#fff",
-		textAlign: "center",
 	},
 	hourlyIcon: {
-		textAlign: "center",
-		paddingTop: 5,
+		width: 28,
+		height: 28,
+		// paddingTop: 5, paddingBottom: 5,
 	},
 	hourlyDegree: {
 		fontSize: 14,
 		color: "#fff",
-		paddingTop: 5,
-		textAlign: "center",
 	},
 	weekly: {
 		width: Util.size.width,
